@@ -17,19 +17,4 @@ import java.util.Set;
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "pl.coderslab.WarsztatMod6Hibernate.repository")
 public class AppConfig {
-
-    public Set<Converter> getConverters() {
-        Set<Converter> converters = new HashSet<>();
-        //converters.add(new AuthorConverter());
-        //converters.add(new CategoryConverter());
-        return converters;
-    }
-
-    @Bean(name = "conversionService")
-    public ConversionService getConversionService() {
-        ConversionServiceFactoryBean factory = new ConversionServiceFactoryBean();
-        factory.setConverters(getConverters());
-        factory.afterPropertiesSet();
-        return factory.getObject();
-    }
 }
